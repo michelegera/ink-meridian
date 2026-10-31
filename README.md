@@ -16,6 +16,7 @@ file and a status bar all read as one system.
 | [lazygit](lazygit/) | `config.yml` | `~/.config/lazygit/` |
 | [opencode](opencode/) | theme JSON | `~/.config/opencode/themes/` |
 | [tmux](tmux/) | `tmux.conf` | source from `~/.config/tmux/tmux.conf` |
+| [zed](zed/)       | theme JSON | `~/.config/zed/themes/` |
 | [tuicr](tuicr/) | theme TOML | `~/.config/tuicr/themes/` |
 
 Each tool has its own directory with the scheme file and a short README
@@ -26,7 +27,7 @@ covering installation and verification.
 ```bash
 cd /path/to/ink-meridian
 
-mkdir -p ~/.config/bat/themes ~/.config/eza ~/.config/fzf ~/.config/ghostty \
+mkdir -p ~/.config/bat/themes ~/.config/eza ~/.config/fzf ~/.config/ghostty ~/.config/zed \
          ~/.config/lazygit ~/.config/opencode/themes ~/.config/tuicr/themes
 
 cp "bat/Ink Meridian.tmTheme" ~/.config/bat/themes/
@@ -34,7 +35,8 @@ cp eza/theme.yml            ~/.config/eza/theme.yml
 cp fzf/fzf.conf             ~/.config/fzf/fzf.conf
 cp ghostty/config           ~/.config/ghostty/config
 cp opencode/ink-meridian.json ~/.config/opencode/themes/
-cp tuicr/ink-meridian.toml  ~/.config/tuicr/themes/
+cp zed/ink-meridian.json      ~/.config/zed/themes/
+cp tuicr/ink-meridian.toml      ~/.config/tuicr/themes/
 cp tuicr/ink-meridian-syntax.tmTheme ~/.config/tuicr/themes/
 ```
 
@@ -50,6 +52,7 @@ Then pick it up:
 
 - **bat** — add `--theme="Ink Meridian"` to `~/.config/bat/config`, then `bat cache --build`
 - **opencode** — set the theme name in `~/.config/opencode/cli.json` (v2) or `~/.config/opencode/tui.json`; see [opencode/README.md](opencode/README.md)
+- **zed** — open Theme Selector (`Cmd+K Cmd+T`) and pick **Ink Meridian Dark** or **Ink Meridian Light**
 - **tuicr** — set `theme = "ink-meridian"` in `~/.config/tuicr/config.toml`
 - **tmux** — add `source-file /path/to/ink-meridian/tmux/tmux.conf` to `~/.config/tmux/tmux.conf`, then `tmux source-file ~/.config/tmux/tmux.conf`
 - **ghostty** — reload the window (`Cmd+Shift+,`)
