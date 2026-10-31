@@ -1,0 +1,54 @@
+# Ink Meridian — lazygit colour theme
+# Install: cp lazygit/config.yml ~/.config/lazygit/config.yml
+#
+# Schema notes (lazygit 0.66):
+#  - gui.theme is the base theme; gui.darkTheme / gui.lightTheme only override
+#    it per terminal background, so a single dark palette belongs in theme.
+#  - Every colour value is a list: [colour] or [colour, style].
+
+gui:
+  # Nerd Fonts v3 glyphs (commit and branch icons).
+  nerdFontsVersion: "3"
+
+  # Pin dark-background semantics: dark author colours, darkTheme branch.
+  colorScheme: dark
+
+  theme:
+    # Base text
+    defaultFgColor: ['#CCD6EA']                  # text
+
+    # Window borders
+    activeBorderColor: ['#83A8F2', 'bold']       # accent
+    inactiveBorderColor: ['#26365A']             # surface-highlight
+    searchingActiveBorderColor: ['#E9C78C']      # bright yellow
+
+    # Keybinding help line
+    optionsTextColor: ['#83A8F2']                # accent
+
+    # Selected lines
+    selectedLineFgColor: ['#E6ECF7']             # text-bright
+    selectedLineBgColor: ['#25324E']             # blue tint
+    inactiveViewSelectedLineBgColor: ['#1A2233'] # surface
+
+    # Commits
+    cherryPickedCommitFgColor: ['#83A8F2']       # accent
+    cherryPickedCommitBgColor: ['#233949']       # cyan tint
+    markedBaseCommitFgColor: ['#83A8F2']         # accent
+    markedBaseCommitBgColor: ['#3C3834']         # yellow tint
+    unstagedChangesColor: ['#EC8B97']            # bright red
+
+    # Commit authors (keyed by author name; '*' styles all others)
+    authorColors:
+      '*': '#A687E0'                             # magenta
+      'A': '#83A8F2'                             # accent
+      'M': '#9DD4A7'                             # bright green
+      'R': '#E9C78C'                             # bright yellow
+
+    # Branches (regex on branch name; first match wins)
+    branchColorPatterns:
+      '^\*\s': '#9DD4A7'                         # current branch
+      '^\+\s': '#9DD4A7'                         # worktree / added branch
+      '^\-\s': '#EC8B97'                         # deleted branch
+      ' -> ': '#E9C78C'                          # upstream
+      '^remotes/': '#67B7CF'                     # remotes
+      '^tags/': '#BDA3EC'                        # tags
