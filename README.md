@@ -19,6 +19,7 @@ a distinct palette role.*
 | [fzf](fzf/) | `fzf.conf` | `~/.config/fzf/` |
 | [ghostty](ghostty/) | `config` | `~/.config/ghostty/` |
 | [lazygit](lazygit/) | `config.yml` | `~/.config/lazygit/` |
+| [neovim](neovim/) | Lua colourscheme | `~/.config/nvim/colors/` |
 | [opencode](opencode/) | theme JSON | `~/.config/opencode/themes/` |
 | [tmux](tmux/) | `tmux.conf` | source from `~/.config/tmux/tmux.conf` |
 | [zed](zed/)       | theme JSON | `~/.config/zed/themes/` |
@@ -33,12 +34,13 @@ covering installation and verification.
 cd /path/to/ink-meridian
 
 mkdir -p ~/.config/bat/themes ~/.config/eza ~/.config/fzf ~/.config/ghostty ~/.config/zed \
-         ~/.config/lazygit ~/.config/opencode/themes ~/.config/tuicr/themes
+         ~/.config/lazygit ~/.config/nvim/colors ~/.config/opencode/themes ~/.config/tuicr/themes
 
 cp "bat/Ink Meridian.tmTheme" ~/.config/bat/themes/
 cp eza/theme.yml            ~/.config/eza/theme.yml
 cp fzf/fzf.conf             ~/.config/fzf/fzf.conf
 cp ghostty/config           ~/.config/ghostty/config
+cp neovim/colors/ink-meridian.lua ~/.config/nvim/colors/
 cp opencode/ink-meridian.json ~/.config/opencode/themes/
 cp zed/ink-meridian.json      ~/.config/zed/themes/
 cp tuicr/ink-meridian.toml      ~/.config/tuicr/themes/
@@ -58,6 +60,7 @@ Then pick it up:
 - **bat** — add `--theme="Ink Meridian"` to `~/.config/bat/config`, then `bat cache --build`
 - **opencode** — set the theme name in `~/.config/opencode/cli.json` (v2) or `~/.config/opencode/tui.json`; see [opencode/README.md](opencode/README.md)
 - **zed** — open Theme Selector (`Cmd+K Cmd+T`) and pick **Ink Meridian Dark** or **Ink Meridian Light**
+- **neovim** — add `vim.cmd.colorscheme("ink-meridian")` to `~/.config/nvim/init.lua`, then `:colorscheme ink-meridian`
 - **tuicr** — set `theme = "ink-meridian"` in `~/.config/tuicr/config.toml`
 - **tmux** — add `source-file /path/to/ink-meridian/tmux/tmux.conf` to `~/.config/tmux/tmux.conf`, then `tmux source-file ~/.config/tmux/tmux.conf`
 - **ghostty** — reload the window (`Cmd+Shift+,`)
@@ -117,8 +120,9 @@ repository that are not taken verbatim from the source palette.
 | Tint cyan | `#233949` |
 | Tint yellow | `#3C3834` |
 
-Each tool uses the subset of tints its own slots call for, so no single scheme
-uses all six.
+Each tool uses the tints its own slots call for. The neovim port is the one
+scheme that uses all six, because its diff, diagnostic and search surfaces each
+need a distinct background.
 
 ## Layout
 
@@ -129,6 +133,7 @@ uses all six.
 ├── fzf/          fzf.conf
 ├── ghostty/      config
 ├── lazygit/      config.yml
+├── neovim/       colors/ink-meridian.lua
 ├── opencode/     ink-meridian.json
 ├── screenshots/  zed-typescript.png
 ├── tmux/         tmux.conf
