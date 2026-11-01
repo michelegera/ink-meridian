@@ -7,6 +7,11 @@ Every tool in this repository renders from the same twenty-two base colours
 plus six derived tints, so a file listing, a diff, a syntax-highlighted source
 file and a status bar all read as one system.
 
+![Ink Meridian Dark in Zed, with TypeScript syntax highlighting](screenshots/zed-typescript.png)
+
+*TypeScript in Zed — keywords, types, strings, numbers and comments each map to
+a distinct palette role.*
+
 | Tool | Scheme | Install path |
 | --- | --- | --- |
 | [bat](bat/) | TextMate `.tmTheme` | `~/.config/bat/themes/` |
@@ -119,12 +124,14 @@ uses all six.
 
 ```
 .
-├── bat/       Ink Meridian.tmTheme
-├── eza/       theme.yml
-├── fzf/       fzf.conf
-├── ghostty/   config
-├── lazygit/   config.yml
-├── opencode/  ink-meridian.json
-├── tmux/      tmux.conf
-└── tuicr/     ink-meridian.toml, ink-meridian-syntax.tmTheme
+├── bat/          Ink Meridian.tmTheme
+├── eza/          theme.yml
+├── fzf/          fzf.conf
+├── ghostty/      config
+├── lazygit/      config.yml
+├── opencode/     ink-meridian.json
+├── screenshots/  zed-typescript.png
+├── tmux/         tmux.conf
+├── tuicr/        ink-meridian.toml, ink-meridian-syntax.tmTheme
+└── zed/          ink-meridian.json
 ```
