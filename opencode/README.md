@@ -18,10 +18,14 @@ files exists — check yours before editing:
 {
   "$schema": "https://opencode.ai/v2/cli.json",
   "theme": {
-    "name": "ink-meridian"
+    "name": "ink-meridian",
+    "mode": "system"
   }
 }
 ```
+
+`mode` is optional: `system` follows the terminal's light/dark appearance,
+`dark` or `light` lock one palette. The theme ships both.
 
 `~/.config/opencode/tui.json`:
 
